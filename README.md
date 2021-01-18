@@ -15,7 +15,7 @@ sudo pip3 install numpy
 
 Download/Clone this repository to a directory and run `python3 CardDetector.py` from that directory. 
 
-The program allows you to use either a PiCamera or a USB camera. If using a USB camera, change line 38 in CardDetector.py to:
+The program allows you to use either a PiCamera or a USB camera. If using a USB camera, change *line 38 in CardDetector.py* to:
 ```
 videostream = VideoStream.VideoStream((IM_WIDTH,IM_HEIGHT),FRAME_RATE,2,0).start()
 ```

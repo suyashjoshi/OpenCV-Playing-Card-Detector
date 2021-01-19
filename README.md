@@ -3,19 +3,19 @@
 This is a Python program that uses OpenCV to detect and identify playing cards from a PiCamera / USB Camera video feed on a Raspberry Pi 3 or newer
 
 ### Pre-Req / Dependencies
-Open your terminal / ssh into Raspberry Pi and install the following python packages that we will need.
+Open your terminal / ssh into Raspberry Pi and install the following python packages that we will need. Note that OpenCV installation can take a while as it's a big package.
 
 ```
-sudo apt-get install python-picamera python3-picamera
-sudo pip3 install opencv-contrib-python
+sudo apt-get install python-picamera python3-picamera libatlas-base-dev libhdf5-dev libhdf5-serial-dev libatlas-base-dev libjasper-dev  libqtgui4  libqt4-test
 sudo pip3 install numpy
+sudo pip3 install --no-cache-dir opencv-python-headless
 ```
 
 ## Usage
 
 Download/Clone this repository to a directory and run `python3 CardDetector.py` from that directory. 
 
-The program allows you to use either a PiCamera or a USB camera. **If using a USB camera, edit line 38 in CardDetector.py :**
+The program allows you to use either a PiCamera or a USB camera. Make sure to enable the camera access for the pi using `sudo raspi-config` --> Interface Option --> Enable Camera. **If using a USB camera, change line 38 in CardDetector.py to the following :**
 ```
 videostream = VideoStream.VideoStream((IM_WIDTH,IM_HEIGHT),FRAME_RATE,2,0).start()
 ```
